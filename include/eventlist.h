@@ -9,6 +9,7 @@ typedef struct _EventNode {
 
 int lengthEventList(EventNode *head);
 void printEventList(EventNode *head);
+void freeList(EventNode *head);
 EventNode *findTail(EventNode *head);
 
 EventNode *createEventNode(Event event);
@@ -17,4 +18,6 @@ EventNode *prependEvent(EventNode *head, Event event);
 EventNode *searchEvent(EventNode *head, Event event);
 
 Event getEvent(EventNode *head, int index);
+void quickSortByDate(EventNode *head, int low, int high);
+
 #endif
