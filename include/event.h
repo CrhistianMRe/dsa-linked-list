@@ -12,4 +12,7 @@ typedef struct Event{
     char *status;
 } Event;
 
+void *assignEventValue(char *origin);
+_Bool isInvalidDate(char date[10]);
+_Bool isInvalidStatus(char *status);
 #endif

@@ -3,7 +3,6 @@
 #include "eventlist.h"
 #include <stdio.h>
 
-//method load;
 //method export;
 
 EventNode *loadFile(FILE *file);
