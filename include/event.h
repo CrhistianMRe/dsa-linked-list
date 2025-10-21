@@ -1,7 +1,7 @@
 #ifndef _event_h
 #define _event_h
 
-#define DATE_LENGTH 10
+#define DATE_LENGTH 11
 
 typedef struct Event{
     char *id;

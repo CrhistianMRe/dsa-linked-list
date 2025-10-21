@@ -14,7 +14,7 @@ void skipRecord(FILE *file){
 
 EventNode *loadFile(FILE *file){
 
-    EventNode *eventList = {};
+    EventNode *eventList = NULL;
     _Bool skipLine = 0;
     Event event = {0};
 
@@ -36,7 +36,9 @@ EventNode *loadFile(FILE *file){
                 event.id = assignEventValue(temp);
                 break;
             case 2:
-                strcpy(event.date, temp);
+                // was: strcpy(event.date, temp);
+                strncpy(event.date, temp, DATE_LENGTH - 1);
+                event.date[DATE_LENGTH - 1] = '\0';
                 break;
             case 3:
                 event.vehicle = assignEventValue(temp);

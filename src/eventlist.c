@@ -61,6 +61,7 @@ EventNode *createEventNode(Event event) {
     for(int i = 0; i < 10; i++){
         n->event.date[i] = event.date[i];
     }
+    n->event.date[10] = '\0';
     n->event.vehicle = event.vehicle;
     n->event.mission = event.mission;
     n->event.site = event.site;

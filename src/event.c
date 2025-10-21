@@ -1,10 +1,10 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <string.h>
-#include <../include/event.h>
+#include "../include/event.h"
 
 void *assignEventValue(char *origin) {
-    char *result;
+    char *result = NULL;
     if(strlen(origin) != 0 ){
         result = malloc(strlen(origin) + 1);
         strcpy(result, origin);
