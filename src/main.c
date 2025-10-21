@@ -1,6 +1,7 @@
 #include "stdio.h"
 #include "../include/eventlist.h"
 #include "../include/storage.h"
+#include "../include/crud.h"
 #include <string.h>
 
 static _Bool exit = 1;
@@ -19,6 +20,15 @@ _Bool contains(char prompt[], char ext[]) {
     return strstr(prompt, ext) != NULL;
 }
 
+int containsAmountOfTimes(char prompt[], char expected) {
+    int count = 0;
+    for (int i = 0; i < strlen(prompt) + 1; i++) {
+        char single = prompt[i];
+        if(strchr(&single, expected) != NULL) count++;
+    }
+    return count;
+}
+
 int main(int argc, char *argv[]) {
 
 
@@ -33,7 +43,8 @@ int main(int argc, char *argv[]) {
 
         char *arg2 = strtok(NULL, " ");
 
-        if(contains(arg1, "load") && (contains(arg2, ".txt") || contains(arg2, ".csv"))) {
+        //load
+        if(contains(arg1, "load") && (arg2 != NULL) && (contains(arg2, ".txt") || contains(arg2, ".csv"))) {
 
             FILE *file = fopen(arg2, "r");
 
@@ -46,7 +57,15 @@ int main(int argc, char *argv[]) {
 
             eventlist = loadFile(file);
             printEventList(eventlist);
+
         } else {printDef(); }
+
+        //add
+        if((contains(arg1, "add") && (arg2 != NULL) && containsAmountOfTimes(arg2, ',') == 5)) {
+            if(addRecord(eventlist, arg2)){printf("\nrecord added\n");} else {printf("\nrecord not added\n");}
+        }
+
+
 
     }
 
