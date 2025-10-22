@@ -3,7 +3,7 @@
 #include "../include/eventlist.h"
 #include <string.h>
 
-_Bool addRecord(EventNode *eventList, char *record) {
+EventNode *addRecord(EventNode *eventList, char *record) {
     Event event = {0};
     int pos = 1;
     int initialCount = lengthEventList(eventList);
@@ -43,10 +43,8 @@ _Bool addRecord(EventNode *eventList, char *record) {
 
     if((initialCount +1) == lengthEventList(eventList)) {
         quickSortByDate(eventList, 0, lengthEventList(eventList)-1);
-        printEventList(eventList);
-        return 1;
+        return eventList;
     }
-    return 0;
-    
+    return NULL;
 }
 

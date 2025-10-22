@@ -62,7 +62,12 @@ int main(int argc, char *argv[]) {
 
         //add
         if((contains(arg1, "add") && (arg2 != NULL) && containsAmountOfTimes(arg2, ',') == 5)) {
-            if(addRecord(eventlist, arg2)){printf("\nrecord added\n");} else {printf("\nrecord not added\n");}
+            int len = lengthEventList(eventlist);
+            eventlist = addRecord(eventlist, arg2);
+            if((lengthEventList(eventlist) == len + 1)) {
+                printf("\nrecord added\n");
+                printEventList(eventlist);
+            } else {printf("\nrecord not added\n");}
         }
 
 
