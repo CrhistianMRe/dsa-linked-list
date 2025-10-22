@@ -79,6 +79,16 @@ int main(int argc, char *argv[]) {
             }else{printf("\nupdate failed!\n");};
         }
 
+        //delete
+        if(strcmp(arg1, "delete") == 0 && (arg2 != NULL)) {
+            int len = lengthEventList(eventlist);
+            eventlist = deleteRecord(eventlist, arg2);
+            if(len != lengthEventList(eventlist)) {
+                printf("\ndelete succeded!\n");
+                printEventList(eventlist);
+            }else{printf("\ndelete failed!\n");}
+        }
+
 
 
     }

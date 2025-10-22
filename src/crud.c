@@ -93,3 +93,31 @@ _Bool updateRecordField(EventNode *eventList, char *id, char *fieldWithValue) {
     return 0;
 };
 
+EventNode *deleteRecord(EventNode *eventList, char *id) {
+    EventNode *newEventList = NULL;
+    EventNode *cur = eventList;
+    EventNode *deletedNode = NULL;
+    int l = lengthEventList(eventList);
+
+    if(getEventNodeById(eventList, id) == NULL) return eventList;
+
+    for (int i = 0; i < l; i++) {
+        if(!(strcmp(cur->event.id, id) == 0)) {
+            newEventList = appendEvent(newEventList, cur->event);
+        }else{
+            deletedNode = cur;
+        }
+        cur = cur->next;
+    }
+    if(deletedNode != NULL) {
+        free(deletedNode->event.id);
+        free(deletedNode->event.mission);
+        free(deletedNode->event.status);
+        free(deletedNode->event.site);
+        free(deletedNode->event.vehicle);
+        free(deletedNode);
+        return newEventList;
+    }
+    return eventList;
+}
+

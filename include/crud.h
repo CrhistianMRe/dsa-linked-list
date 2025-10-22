@@ -5,7 +5,8 @@
 EventNode *addRecord(EventNode *eventlist, char *record);
 
 _Bool updateRecordField(EventNode *eventList, char *id, char *fieldWithValue);
-//method delete;
+
+EventNode *deleteRecord(EventNode *eventList, char *id);
 //method range;
 //method find;
 
