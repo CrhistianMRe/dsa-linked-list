@@ -2,7 +2,7 @@
 #define _crud_h
 #include "../include/eventlist.h"
 
-_Bool addRecord(EventNode *eventlist, char *record);
+EventNode *addRecord(EventNode *eventlist, char *record);
 
 //method update;
 //method delete;
