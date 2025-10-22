@@ -127,6 +127,22 @@ Event getEvent(EventNode *head, int index) {
     return cur->event;
 }
 
+EventNode *getEventNodeById(EventNode *head, char *id) {
+    int length = lengthEventList(head);
+    EventNode *cur = head;
+    if (head == NULL || length<0) {
+        return NULL;
+    }
+    for (int i=0; i<length; i++) {
+        if (cur == NULL) { break; }
+        if(strcmp(cur->event.id, id) == 0) {
+            return cur;
+        }
+        cur = cur->next;
+    }
+    return NULL;
+}
+
 EventNode *getEventNode(EventNode *head, int index) {
     EventNode *emptyEvent = {0};
     int i;

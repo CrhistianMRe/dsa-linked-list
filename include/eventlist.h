@@ -18,6 +18,7 @@ EventNode *prependEvent(EventNode *head, Event event);
 EventNode *searchEvent(EventNode *head, Event event);
 
 Event getEvent(EventNode *head, int index);
+EventNode *getEventNodeById(EventNode *head, char *id);
 void quickSortByDate(EventNode *head, int low, int high);
 
 #endif
