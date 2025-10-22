@@ -1,7 +1,7 @@
 #ifndef _event_h
 #define _event_h
 
-#define DATE_LENGTH 10
+#define DATE_LENGTH 11
 
 typedef struct Event{
     char *id;
@@ -13,6 +13,6 @@ typedef struct Event{
 } Event;
 
 void *assignEventValue(char *origin);
-_Bool isInvalidDate(char date[10]);
+_Bool isInvalidDate(char date[11]);
 _Bool isInvalidStatus(char *status);
 #endif
