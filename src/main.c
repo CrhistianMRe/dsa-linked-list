@@ -4,12 +4,12 @@
 #include "../include/crud.h"
 #include <string.h>
 
-static _Bool exit = 1;
-static EventNode *eventlist = NULL;
+static _Bool close = 1;
+EventNode *eventlist = NULL;
 
 void intHandler(int dummy){
     freeList(eventlist);
-    exit= 0;
+    close = 0;
 }
 
 void printDef(){
@@ -32,7 +32,7 @@ int containsAmountOfTimes(char prompt[], char expected) {
 int main(int argc, char *argv[]) {
 
 
-    while(exit){
+    while(close) {
         char prompt[100] = {};
 
         printf("stlm>> ");
@@ -44,7 +44,7 @@ int main(int argc, char *argv[]) {
         char *arg2 = strtok(NULL, " ");
 
         //load
-        if(contains(arg1, "load") && (arg2 != NULL) && (contains(arg2, ".txt") || contains(arg2, ".csv"))) {
+        if(strcmp(arg1, "load") == 0 && (arg2 != NULL) && (contains(arg2, ".txt") || contains(arg2, ".csv"))) {
 
             FILE *file = fopen(arg2, "r");
 
@@ -68,6 +68,15 @@ int main(int argc, char *argv[]) {
                 printf("\nrecord added\n");
                 printEventList(eventlist);
             } else {printf("\nrecord not added\n");}
+        }
+
+        //update
+        if(strcmp(arg1, "update") == 0 && (arg2 != NULL)) {
+            char *arg3 = strtok(NULL, " ");
+            if(updateRecordField(eventlist, arg2, arg3)){
+                printf("\nupdate succeded!\n");
+                printEventList(eventlist);
+            }else{printf("\nupdate failed!\n");};
         }
 
 

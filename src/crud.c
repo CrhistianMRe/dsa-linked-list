@@ -1,6 +1,7 @@
 #include "../include/crud.h"
 #include "../include/event.h"
 #include "../include/eventlist.h"
+#include <stdlib.h>
 #include <string.h>
 
 EventNode *addRecord(EventNode *eventList, char *record) {
@@ -47,4 +48,48 @@ EventNode *addRecord(EventNode *eventList, char *record) {
     }
     return NULL;
 }
+
+_Bool updateRecordField(EventNode *eventList, char *id, char *fieldWithValue) {
+    EventNode *eventFound = getEventNodeById(eventList, id);
+    char *field = strtok(fieldWithValue, " = ");
+    char *value = strtok(NULL, " = ");
+    if(eventFound != NULL && field != NULL && value != NULL) {
+
+        if(strcmp(field, "id") == 0) {
+            free(eventFound->event.id);
+            eventFound->event.id = assignEventValue(value);
+            return 1;
+        }
+
+        if(strcmp(field, "date") == 0 && !isInvalidDate(value)) {
+            strcpy(eventFound->event.date, value);
+            return 1;
+        }
+
+        if(strcmp(field, "vehicle") == 0) {
+            free(eventFound->event.vehicle);
+            eventFound->event.vehicle = assignEventValue(value);
+            return 1;
+        }
+
+        if(strcmp(field, "mission") == 0) {
+            free(eventFound->event.mission);
+            eventFound->event.mission = assignEventValue(value);
+            return 1;
+        }
+
+        if(strcmp(field, "site") == 0) {
+            free(eventFound->event.site);
+            eventFound->event.site = assignEventValue(value);
+            return 1;
+        }
+
+        if(strcmp(field, "status") == 0 && !isInvalidStatus(value)) {
+            free(eventFound->event.status);
+            eventFound->event.status = assignEventValue(value);
+            return 1;
+        }
+    }
+    return 0;
+};
 
