@@ -9,7 +9,7 @@ static int read = 0;
 
 void skipRecord(FILE *file){
     read = 0;
-    fscanf(file, "\n");;
+    fscanf(file, "\n");
 }
 
 EventNode *loadFile(FILE *file){
@@ -25,6 +25,7 @@ EventNode *loadFile(FILE *file){
 
         //missing record validation
         if(strlen(temp) == 0) {
+            fgetc(file);
             skipRecord(file);
         }
 
