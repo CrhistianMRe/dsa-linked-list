@@ -96,6 +96,15 @@ int main(int argc, char *argv[]) {
             handled = 1;
         }
 
+        //range
+        if (!handled && arg1 != NULL && strstr(arg1, "range")) {
+            char *arg3 = strtok(NULL, " ");
+            if (arg2 != NULL && arg3 != NULL) {
+                rangePrint(eventlist, arg2, arg3);
+                handled = 1;
+            }
+        }
+
         if(!handled) printDef();
     }
 

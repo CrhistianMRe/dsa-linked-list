@@ -1,6 +1,7 @@
 #include "../include/crud.h"
 #include "../include/event.h"
 #include "../include/eventlist.h"
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -119,5 +120,33 @@ EventNode *deleteRecord(EventNode *eventList, char *id) {
         return newEventList;
     }
     return eventList;
+}
+
+void rangePrint(EventNode *eventList, const char *startDate, const char *endDate) {
+    if (eventList == NULL) return;
+
+    // validate inputs using existing helper
+    if (isInvalidDate((char*)startDate) || isInvalidDate((char*)endDate)) {
+        printf("ERROR range invalid date\n");
+        return;
+    }
+    // dates are YYYY-MM-DD; strcmp is valid lexical comparator
+    if (strcmp(startDate, endDate) > 0) {
+        printf("ERROR range start_after_end\n");
+        return;
+    }
+
+    // list is sorted by date in your codebase (quickSortByDate), so single pass is enough
+    for (EventNode *cur = eventList; cur != NULL; cur = cur->next) {
+        if (strcmp(cur->event.date, startDate) < 0) continue;
+        if (strcmp(cur->event.date, endDate) > 0) break;
+        printf("%s,%s,%s,%s,%s,%s\n",
+               cur->event.id,
+               cur->event.date,
+               cur->event.vehicle,
+               cur->event.mission,
+               cur->event.site,
+               cur->event.status);
+    }
 }
 
