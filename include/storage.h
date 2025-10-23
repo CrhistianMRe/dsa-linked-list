@@ -6,4 +6,5 @@
 //method export;
 
 EventNode *loadFile(FILE *file);
+_Bool exportCSV(EventNode *eventList, const char *fileName);
 #endif 

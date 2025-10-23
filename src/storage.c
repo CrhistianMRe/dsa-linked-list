@@ -64,3 +64,25 @@ EventNode *loadFile(FILE *file){
     quickSortByDate(eventList, 0, lengthEventList(eventList)-1);
     return eventList;
 }
+
+_Bool exportCSV(EventNode *eventList, const char *fileName) {
+    FILE *f = fopen(fileName, "w");
+    if (!f) { printf("ERROR export\n"); return 0; }
+
+    // header
+    fprintf(f, "id,date,vehicle,mission,site,status\n");
+
+    // rows in current order (already chronological by your sorter)
+    for (EventNode *cur = eventList; cur != NULL; cur = cur->next) {
+        fprintf(f, "%s,%s,%s,%s,%s,%s\n",
+                cur->event.id,
+                cur->event.date,
+                cur->event.vehicle,
+                cur->event.mission,
+                cur->event.site,
+                cur->event.status);
+    }
+    fclose(f);
+    printf("OK\n");
+    return 1;
+}
