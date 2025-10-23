@@ -29,7 +29,6 @@ SLV027,2025-11-18,Starship,Deep Space Cargo 2,Boca Chica Orbital Pad,Delayed
 SLV028,2025-12-01,Vega C,Remote Sensing Cluster,Vega Launch Zone,Success
 SLV029,2025-12-12,PSLV,Navigation Upgrade,Satish Dhawan FLP,Success
 SLV030,2025-12-25,Falcon Heavy,Christmas Comms Satellite,KSC LC-39A,Scheduled
-# invalid entries below (to test skipping)
 SLV031,2025-13-01,Falcon 9,Invalid Month Test,CCSFS SLC-40,Scheduled
 SLV032,2025-06-xx,Falcon 9,Bad Date Test,CCSFS SLC-40,Success
 SLV033,2025-06-30,,Missing Vehicle Test,WSLC LC-201,Scheduled
