@@ -105,9 +105,15 @@ int main(int argc, char *argv[]) {
             }
         }
 
+        //find
         if(!handled && arg1 != NULL && strcmp(arg1, "find") == 0 && arg2 != NULL) {
             int count = findEvent(eventlist, arg2);
             printf("\nAmount of records found: %d\n", count);
+            handled = 1;
+        }
+
+        if (!handled && arg1 && strcmp(arg1, "export") == 0 && arg2 != NULL) {
+            exportCSV(eventlist, arg2);
             handled = 1;
         }
 
