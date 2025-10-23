@@ -45,82 +45,85 @@ int main(int argc, char *argv[]) {
 
         _Bool handled = 0;
 
+        if(arg1 != NULL){
+
         //load
-        if(!handled && strcmp(arg1, "load") == 0 && (arg2 != NULL) && (contains(arg2, ".txt") || contains(arg2, ".csv"))) {
+            if(!handled && strcmp(arg1, "load") == 0 && (arg2 != NULL) && (contains(arg2, ".txt") || contains(arg2, ".csv"))) {
 
-            FILE *file = fopen(arg2, "r");
+                FILE *file = fopen(arg2, "r");
 
-            if(file == NULL){
-                printf("Error while opening file, use -help.\n");
-                return 1;
-            }
+                if(file == NULL){
+                    printf("Error while opening file, use -help.\n");
+                    return 1;
+                }
 
-            printf("FILE FOUND!\n\n");
+                printf("FILE FOUND!\n\n");
 
-            eventlist = loadFile(file);
-            printEventList(eventlist);
-            handled = 1;
-        } 
-
-        //add
-        if((contains(arg1, "add") && (arg2 != NULL) && containsAmountOfTimes(arg2, ',') == 5)) {
-            int len = lengthEventList(eventlist);
-            eventlist = addRecord(eventlist, arg2);
-            if((lengthEventList(eventlist) == len + 1)) {
-                printf("\nrecord added\n");
+                eventlist = loadFile(file);
                 printEventList(eventlist);
-            } else {printf("\nrecord not added\n");}
+                handled = 1;
+            } 
 
-            handled = 1;
-        }
+            //add
+            if((contains(arg1, "add") && (arg2 != NULL) && containsAmountOfTimes(arg2, ',') == 5)) {
+                int len = lengthEventList(eventlist);
+                eventlist = addRecord(eventlist, arg2);
+                if((lengthEventList(eventlist) == len + 1)) {
+                    printf("\nrecord added\n");
+                    printEventList(eventlist);
+                } else {printf("\nrecord not added\n");}
 
-        //update
-        if(strcmp(arg1, "update") == 0 && (arg2 != NULL)) {
-            strtok(arg2, " ");
-            char *arg3 = strtok(NULL, "");
-            if(updateRecordField(eventlist, arg2, arg3)){
-                printf("\nupdate succeded!\n");
-                printEventList(eventlist);
-            }else{printf("\nupdate failed!\n");};
-            handled = 1;
-        }
-
-        //delete
-        if(strcmp(arg1, "delete") == 0 && (arg2 != NULL)) {
-            int len = lengthEventList(eventlist);
-            eventlist = deleteRecord(eventlist, arg2);
-            if(len != lengthEventList(eventlist)) {
-                printf("\ndelete succeded!\n");
-                printEventList(eventlist);
-            }else{printf("\ndelete failed!\n");}
-            handled = 1;
-        }
-
-        //range
-        if (!handled && arg1 != NULL && strstr(arg1, "range")) {
-            char *arg3 = strtok(NULL, " ");
-            if (arg2 != NULL && arg3 != NULL) {
-                rangePrint(eventlist, arg2, arg3);
                 handled = 1;
             }
-        }
 
-        //find
-        if(!handled && arg1 != NULL && strcmp(arg1, "find") == 0 && arg2 != NULL) {
-            int count = findEvent(eventlist, arg2);
-            printf("\nAmount of records found: %d\n", count);
-            handled = 1;
-        }
+            //update
+            if(strcmp(arg1, "update") == 0 && (arg2 != NULL)) {
+                strtok(arg2, " ");
+                char *arg3 = strtok(NULL, "");
+                if(updateRecordField(eventlist, arg2, arg3)){
+                    printf("\nupdate succeded!\n");
+                    printEventList(eventlist);
+                }else{printf("\nupdate failed!\n");};
+                handled = 1;
+            }
 
-        //export
-        if (!handled && arg1 && strcmp(arg1, "export") == 0 && arg2 != NULL) {
-            exportCSV(eventlist, arg2);
-            handled = 1;
-        }
+            //delete
+            if(strcmp(arg1, "delete") == 0 && (arg2 != NULL)) {
+                int len = lengthEventList(eventlist);
+                eventlist = deleteRecord(eventlist, arg2);
+                if(len != lengthEventList(eventlist)) {
+                    printf("\ndelete succeded!\n");
+                    printEventList(eventlist);
+                }else{printf("\ndelete failed!\n");}
+                handled = 1;
+            }
 
-        if(strcmp(arg1, "exit") == 0) {
-            close = 0;
-            handled = 1;
+            //range
+            if (!handled && strstr(arg1, "range")) {
+                char *arg3 = strtok(NULL, " ");
+                if (arg2 != NULL && arg3 != NULL) {
+                    rangePrint(eventlist, arg2, arg3);
+                    handled = 1;
+                }
+            }
+
+            //find
+            if(!handled && strcmp(arg1, "find") == 0 && arg2 != NULL) {
+                int count = findEvent(eventlist, arg2);
+                printf("\nAmount of records found: %d\n", count);
+                handled = 1;
+            }
+
+            //export
+            if (!handled && strcmp(arg1, "export") == 0 && arg2 != NULL) {
+                exportCSV(eventlist, arg2);
+                handled = 1;
+            }
+
+            if(strcmp(arg1, "exit") == 0) {
+                close = 0;
+                handled = 1;
+            }
         }
 
         if(!handled) printDef();
