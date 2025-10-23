@@ -2,6 +2,7 @@
 #include "../include/eventlist.h"
 #include "../include/storage.h"
 #include "../include/crud.h"
+#include <endian.h>
 #include <string.h>
 
 static _Bool close = 1;
@@ -43,8 +44,10 @@ int main(int argc, char *argv[]) {
 
         char *arg2 = strtok(NULL, " ");
 
+        _Bool handled = 0;
+
         //load
-        if(strcmp(arg1, "load") == 0 && (arg2 != NULL) && (contains(arg2, ".txt") || contains(arg2, ".csv"))) {
+        if(!handled && strcmp(arg1, "load") == 0 && (arg2 != NULL) && (contains(arg2, ".txt") || contains(arg2, ".csv"))) {
 
             FILE *file = fopen(arg2, "r");
 
@@ -57,8 +60,8 @@ int main(int argc, char *argv[]) {
 
             eventlist = loadFile(file);
             printEventList(eventlist);
-
-        } else {printDef(); }
+            handled = 1;
+        } 
 
         //add
         if((contains(arg1, "add") && (arg2 != NULL) && containsAmountOfTimes(arg2, ',') == 5)) {
@@ -68,6 +71,8 @@ int main(int argc, char *argv[]) {
                 printf("\nrecord added\n");
                 printEventList(eventlist);
             } else {printf("\nrecord not added\n");}
+
+            handled = 1;
         }
 
         //update
@@ -77,6 +82,7 @@ int main(int argc, char *argv[]) {
                 printf("\nupdate succeded!\n");
                 printEventList(eventlist);
             }else{printf("\nupdate failed!\n");};
+            handled = 1;
         }
 
         //delete
@@ -87,10 +93,10 @@ int main(int argc, char *argv[]) {
                 printf("\ndelete succeded!\n");
                 printEventList(eventlist);
             }else{printf("\ndelete failed!\n");}
+            handled = 1;
         }
 
-
-
+        if(!handled) printDef();
     }
 
     
