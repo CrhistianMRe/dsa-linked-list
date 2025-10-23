@@ -12,19 +12,28 @@ void *assignEventValue(char *origin) {
     return result;
 }
 
-//local method
-_Bool isInvalidDateRange(char date[11]) {
-    char monthStr[3], dayStr[3];
+
+_Bool isInvalidDateRange(const char date[11]) {
+    char yearStr[5] = {0}, monthStr[3] = {0}, dayStr[3] = {0};
     
+    strncpy(yearStr, &date[0], 4);
     strncpy(monthStr, &date[5], 2);
     strncpy(dayStr, &date[8], 2);
     
-    int month = atoi(monthStr);
-    int day = atoi(dayStr);
-    
-    if (month > 12 || day > 31) return 1;
-    return 0;
+    char *endptr;
+
+    long year = strtol(yearStr, &endptr, 10);
+    if (*endptr != '\0' || year < 1) return 1;
+
+    long month = strtol(monthStr, &endptr, 10);
+    if (*endptr != '\0' || month < 1 || month > 12) return 1;
+
+    long day = strtol(dayStr, &endptr, 10);
+    if (*endptr != '\0' || day < 1 || day > 31) return 1;
+
+    return 0; 
 }
+
 
 _Bool isInvalidDate(char date[11]) {
     int count = 0;
