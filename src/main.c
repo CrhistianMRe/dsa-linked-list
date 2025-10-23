@@ -42,7 +42,7 @@ int main(int argc, char *argv[]) {
 
         char *arg1 = strtok(prompt, " ");
 
-        char *arg2 = strtok(NULL, " ");
+        char *arg2 = strtok(NULL, "");
 
         _Bool handled = 0;
 
@@ -77,7 +77,8 @@ int main(int argc, char *argv[]) {
 
         //update
         if(strcmp(arg1, "update") == 0 && (arg2 != NULL)) {
-            char *arg3 = strtok(NULL, " ");
+            strtok(arg2, " ");
+            char *arg3 = strtok(NULL, "");
             if(updateRecordField(eventlist, arg2, arg3)){
                 printf("\nupdate succeded!\n");
                 printEventList(eventlist);

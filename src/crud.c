@@ -15,7 +15,8 @@ EventNode *addRecord(EventNode *eventList, char *record) {
     while (pos < 7) {
 
         if(pos == 1) col = strtok(record, " , ");
-        if(pos > 1) col = strtok(NULL, " , ");
+        if(pos > 1) col = strtok(NULL, ",");
+        if(!col) break;
 
         if(pos == 2 && isInvalidDate(col)) pos = 99;
         if(pos == 6 && isInvalidStatus(col)) pos = 99;
@@ -53,7 +54,7 @@ EventNode *addRecord(EventNode *eventList, char *record) {
 _Bool updateRecordField(EventNode *eventList, char *id, char *fieldWithValue) {
     EventNode *eventFound = getEventNodeById(eventList, id);
     char *field = strtok(fieldWithValue, " = ");
-    char *value = strtok(NULL, " = ");
+    char *value = strtok(NULL, "=");
     if(eventFound != NULL && field != NULL && value != NULL) {
 
         if(strcmp(field, "id") == 0) {
