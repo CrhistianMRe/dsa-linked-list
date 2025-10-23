@@ -1,0 +1,37 @@
+id,date,vehicle,mission,site,status
+SLV001,2025-01-15,Falcon 9,Starlink Group 9-1,CCSFS SLC-40,Success
+SLV002,2025-01-20,Ariane 6,Artemis Supply Test,Kourou ELA-4,Delayed
+SLV003,2025-02-05,Long March 5B,Chinese Space Lab Module,WSLC LC-101,Success
+SLV004,2025-02-18,H3,HTV-X Cargo to ISS,Tanegashima LA-Y,Failure
+SLV005,2025-03-01,Falcon Heavy,Lunar Probe Pathfinder,KSC LC-39A,Scheduled
+SLV006,2025-03-10,Electron,WeatherSat-3,Mahia LC-1B,Success
+SLV007,2025-03-25,Starship,Deep Space Cargo Test,Boca Chica Orbital Pad,Delayed
+SLV008,2025-04-02,Vega C,Earth Imaging Cluster,Vega Launch Zone,Success
+SLV009,2025-04-12,PSLV,NavIC Expansion,Satish Dhawan FLP,Success
+SLV010,2025-04-30,Falcon 9,Starlink Group 9-2,CCSFS SLC-40,Cancelled
+SLV011,2025-05-10,New Glenn,Orbital Tourism Demo,LC-36,Scheduled
+SLV012,2025-05-22,Long March 7,Space Station Cargo,WSLC LC-201,Success
+SLV013,2025-06-01,Falcon 9,Starlink Batch Alpha,CCSFS SLC-40,Success
+SLV014,2025-06-15,Electron,Microsat Deployment,Mahia LC-1B,Success
+SLV015,2025-06-20,H3,Communications Relay,Tanegashima LA-Y,Scheduled
+SLV016,2025-07-02,Long March 5B,Lunar Lander Test,WSLC LC-101,Failure
+SLV017,2025-07-18,Vega C,Polar Imaging,ESA Vega Site,Delayed
+SLV018,2025-07-25,Starship,Mars Cargo Demo,Boca Chica Orbital Pad,Scheduled
+SLV019,2025-08-03,PSLV,NavIC Expansion 2,Satish Dhawan FLP,Success
+SLV020,2025-08-18,Falcon Heavy,Geostationary Relay,KSC LC-39A,Success
+SLV021,2025-09-01,Ariane 6,Commercial LEO Delivery,Kourou ELA-4,Scheduled
+SLV022,2025-09-12,New Glenn,Heavy Cargo Mission,LC-36,Delayed
+SLV023,2025-09-30,Electron,WeatherSat-4,Mahia LC-1B,Success
+SLV024,2025-10-05,Long March 7,Station Resupply,WSLC LC-201,Success
+SLV025,2025-10-20,Falcon 9,Starlink Group 10-1,CCSFS SLC-40,Success
+SLV026,2025-11-02,H3,Scientific Probe Launch,Tanegashima LA-Y,Cancelled
+SLV027,2025-11-18,Starship,Deep Space Cargo 2,Boca Chica Orbital Pad,Delayed
+SLV028,2025-12-01,Vega C,Remote Sensing Cluster,Vega Launch Zone,Success
+SLV029,2025-12-12,PSLV,Navigation Upgrade,Satish Dhawan FLP,Success
+SLV030,2025-12-25,Falcon Heavy,Christmas Comms Satellite,KSC LC-39A,Scheduled
+# invalid entries below (to test skipping)
+SLV031,2025-13-01,Falcon 9,Invalid Month Test,CCSFS SLC-40,Scheduled
+SLV032,2025-06-xx,Falcon 9,Bad Date Test,CCSFS SLC-40,Success
+SLV033,2025-06-30,,Missing Vehicle Test,WSLC LC-201,Scheduled
+SLV034,2025-07-20,Electron,Missing Status Test,Mahia LC-1B,
+SLV035,06-30-2025,Starship,Bad Format Date,Boca Chica Orbital Pad,Delayed
