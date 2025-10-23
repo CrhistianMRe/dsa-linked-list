@@ -2,55 +2,356 @@ Our Tests - Expected Outputs (Description)
 
         test_load.sh - Expected:
 
-Space Launch Timeline Manager (sltm)
-Type 'help' for commands. Use Ctrl-C to exit.
-sltm> Loaded 30 records, ignored 5 invalid/missing records.
-sltm> Exiting...
+sh ./test/test_load.sh
+stlm>> FILE FOUND!
+
+SLV001,2025-01-15,Falcon 9,Starlink Group 9-1,CCSFS SLC-40,Success
+SLV002,2025-01-20,Ariane 6,Artemis Supply Test,Kourou ELA-4,Delayed
+SLV003,2025-02-05,Long March 5B,Chinese Space Lab Module,WSLC LC-101,Success
+SLV004,2025-02-18,H3,HTV-X Cargo to ISS,Tanegashima LA-Y,Failure
+SLV005,2025-03-01,Falcon Heavy,Lunar Probe Pathfinder,KSC LC-39A,Scheduled
+SLV006,2025-03-10,Electron,WeatherSat-3,Mahia LC-1B,Success
+SLV007,2025-03-25,Starship,Deep Space Cargo Test,Boca Chica Orbital Pad,Delayed
+SLV008,2025-04-02,Vega C,Earth Imaging Cluster,Vega Launch Zone,Success
+SLV009,2025-04-12,PSLV,NavIC Expansion,Satish Dhawan FLP,Success
+SLV010,2025-04-30,Falcon 9,Starlink Group 9-2,CCSFS SLC-40,Cancelled
+SLV011,2025-05-10,New Glenn,Orbital Tourism Demo,LC-36,Scheduled
+SLV012,2025-05-22,Long March 7,Space Station Cargo,WSLC LC-201,Success
+SLV013,2025-06-01,Falcon 9,Starlink Batch Alpha,CCSFS SLC-40,Success
+SLV014,2025-06-15,Electron,Microsat Deployment,Mahia LC-1B,Success
+SLV015,2025-06-20,H3,Communications Relay,Tanegashima LA-Y,Scheduled
+SLV016,2025-07-02,Long March 5B,Lunar Lander Test,WSLC LC-101,Failure
+SLV017,2025-07-18,Vega C,Polar Imaging,ESA Vega Site,Delayed
+SLV018,2025-07-25,Starship,Mars Cargo Demo,Boca Chica Orbital Pad,Scheduled
+SLV019,2025-08-03,PSLV,NavIC Expansion 2,Satish Dhawan FLP,Success
+SLV020,2025-08-18,Falcon Heavy,Geostationary Relay,KSC LC-39A,Success
+SLV021,2025-09-01,Ariane 6,Commercial LEO Delivery,Kourou ELA-4,Scheduled
+SLV022,2025-09-12,New Glenn,Heavy Cargo Mission,LC-36,Delayed
+SLV023,2025-09-30,Electron,WeatherSat-4,Mahia LC-1B,Success
+SLV024,2025-10-05,Long March 7,Station Resupply,WSLC LC-201,Success
+SLV025,2025-10-20,Falcon 9,Starlink Group 10-1,CCSFS SLC-40,Success
+SLV026,2025-11-02,H3,Scientific Probe Launch,Tanegashima LA-Y,Cancelled
+SLV027,2025-11-18,Starship,Deep Space Cargo 2,Boca Chica Orbital Pad,Delayed
+SLV028,2025-12-01,Vega C,Remote Sensing Cluster,Vega Launch Zone,Success
+SLV029,2025-12-12,PSLV,Navigation Upgrade,Satish Dhawan FLP,Success
+SLV030,2025-12-25,Falcon Heavy,Christmas Comms Satellite,KSC LC-39A,Scheduled
+stlm>>
 
         test_add.sh - Expected:
 
-... (omitted) ...
-sltm> Loaded 30 records, ignored 5 invalid/missing records.
-sltm> Added SLV100
-sltm> Error: id SLV100 already exists
-sltm> SLV100,2026-01-01,Falcon 9,New Year Test,CCSFS SLC-40,Scheduled
-sltm> Exported to out_test_add.csv
-sltm> Exiting...
+sh ./test/test_add.sh
+stlm>> FILE FOUND!
+
+SLV001,2025-01-15,Falcon 9,Starlink Group 9-1,CCSFS SLC-40,Success
+SLV002,2025-01-20,Ariane 6,Artemis Supply Test,Kourou ELA-4,Delayed
+SLV003,2025-02-05,Long March 5B,Chinese Space Lab Module,WSLC LC-101,Success
+SLV004,2025-02-18,H3,HTV-X Cargo to ISS,Tanegashima LA-Y,Failure
+SLV005,2025-03-01,Falcon Heavy,Lunar Probe Pathfinder,KSC LC-39A,Scheduled
+SLV006,2025-03-10,Electron,WeatherSat-3,Mahia LC-1B,Success
+SLV007,2025-03-25,Starship,Deep Space Cargo Test,Boca Chica Orbital Pad,Delayed
+SLV008,2025-04-02,Vega C,Earth Imaging Cluster,Vega Launch Zone,Success
+SLV009,2025-04-12,PSLV,NavIC Expansion,Satish Dhawan FLP,Success
+SLV010,2025-04-30,Falcon 9,Starlink Group 9-2,CCSFS SLC-40,Cancelled
+SLV011,2025-05-10,New Glenn,Orbital Tourism Demo,LC-36,Scheduled
+SLV012,2025-05-22,Long March 7,Space Station Cargo,WSLC LC-201,Success
+SLV013,2025-06-01,Falcon 9,Starlink Batch Alpha,CCSFS SLC-40,Success
+SLV014,2025-06-15,Electron,Microsat Deployment,Mahia LC-1B,Success
+SLV015,2025-06-20,H3,Communications Relay,Tanegashima LA-Y,Scheduled
+SLV016,2025-07-02,Long March 5B,Lunar Lander Test,WSLC LC-101,Failure
+SLV017,2025-07-18,Vega C,Polar Imaging,ESA Vega Site,Delayed
+SLV018,2025-07-25,Starship,Mars Cargo Demo,Boca Chica Orbital Pad,Scheduled
+SLV019,2025-08-03,PSLV,NavIC Expansion 2,Satish Dhawan FLP,Success
+SLV020,2025-08-18,Falcon Heavy,Geostationary Relay,KSC LC-39A,Success
+SLV021,2025-09-01,Ariane 6,Commercial LEO Delivery,Kourou ELA-4,Scheduled
+SLV022,2025-09-12,New Glenn,Heavy Cargo Mission,LC-36,Delayed
+SLV023,2025-09-30,Electron,WeatherSat-4,Mahia LC-1B,Success
+SLV024,2025-10-05,Long March 7,Station Resupply,WSLC LC-201,Success
+SLV025,2025-10-20,Falcon 9,Starlink Group 10-1,CCSFS SLC-40,Success
+SLV026,2025-11-02,H3,Scientific Probe Launch,Tanegashima LA-Y,Cancelled
+SLV027,2025-11-18,Starship,Deep Space Cargo 2,Boca Chica Orbital Pad,Delayed
+SLV028,2025-12-01,Vega C,Remote Sensing Cluster,Vega Launch Zone,Success
+SLV029,2025-12-12,PSLV,Navigation Upgrade,Satish Dhawan FLP,Success
+SLV030,2025-12-25,Falcon Heavy,Christmas Comms Satellite,KSC LC-39A,Scheduled
+stlm>>
+record added
+SLV001,2025-01-15,Falcon 9,Starlink Group 9-1,CCSFS SLC-40,Success
+SLV002,2025-01-20,Ariane 6,Artemis Supply Test,Kourou ELA-4,Delayed
+SLV003,2025-02-05,Long March 5B,Chinese Space Lab Module,WSLC LC-101,Success
+SLV004,2025-02-18,H3,HTV-X Cargo to ISS,Tanegashima LA-Y,Failure
+SLV005,2025-03-01,Falcon Heavy,Lunar Probe Pathfinder,KSC LC-39A,Scheduled
+SLV006,2025-03-10,Electron,WeatherSat-3,Mahia LC-1B,Success
+SLV007,2025-03-25,Starship,Deep Space Cargo Test,Boca Chica Orbital Pad,Delayed
+SLV008,2025-04-02,Vega C,Earth Imaging Cluster,Vega Launch Zone,Success
+SLV009,2025-04-12,PSLV,NavIC Expansion,Satish Dhawan FLP,Success
+SLV010,2025-04-30,Falcon 9,Starlink Group 9-2,CCSFS SLC-40,Cancelled
+SLV011,2025-05-10,New Glenn,Orbital Tourism Demo,LC-36,Scheduled
+SLV012,2025-05-22,Long March 7,Space Station Cargo,WSLC LC-201,Success
+SLV013,2025-06-01,Falcon 9,Starlink Batch Alpha,CCSFS SLC-40,Success
+SLV014,2025-06-15,Electron,Microsat Deployment,Mahia LC-1B,Success
+SLV015,2025-06-20,H3,Communications Relay,Tanegashima LA-Y,Scheduled
+SLV016,2025-07-02,Long March 5B,Lunar Lander Test,WSLC LC-101,Failure
+SLV017,2025-07-18,Vega C,Polar Imaging,ESA Vega Site,Delayed
+SLV018,2025-07-25,Starship,Mars Cargo Demo,Boca Chica Orbital Pad,Scheduled
+SLV019,2025-08-03,PSLV,NavIC Expansion 2,Satish Dhawan FLP,Success
+SLV020,2025-08-18,Falcon Heavy,Geostationary Relay,KSC LC-39A,Success
+SLV021,2025-09-01,Ariane 6,Commercial LEO Delivery,Kourou ELA-4,Scheduled
+SLV022,2025-09-12,New Glenn,Heavy Cargo Mission,LC-36,Delayed
+SLV023,2025-09-30,Electron,WeatherSat-4,Mahia LC-1B,Success
+SLV024,2025-10-05,Long March 7,Station Resupply,WSLC LC-201,Success
+SLV025,2025-10-20,Falcon 9,Starlink Group 10-1,CCSFS SLC-40,Success
+SLV026,2025-11-02,H3,Scientific Probe Launch,Tanegashima LA-Y,Cancelled
+SLV027,2025-11-18,Starship,Deep Space Cargo 2,Boca Chica Orbital Pad,Delayed
+SLV028,2025-12-01,Vega C,Remote Sensing Cluster,Vega Launch Zone,Success
+SLV029,2025-12-12,PSLV,Navigation Upgrade,Satish Dhawan FLP,Success
+SLV030,2025-12-25,Falcon Heavy,Christmas Comms Satellite,KSC LC-39A,Scheduled
+SLV100,2026-01-01,Falcon 9,New Year Test,CCSFS SLC-40,Scheduled
+stlm>>
+record added
+SLV001,2025-01-15,Falcon 9,Starlink Group 9-1,CCSFS SLC-40,Success
+SLV002,2025-01-20,Ariane 6,Artemis Supply Test,Kourou ELA-4,Delayed
+SLV003,2025-02-05,Long March 5B,Chinese Space Lab Module,WSLC LC-101,Success
+SLV004,2025-02-18,H3,HTV-X Cargo to ISS,Tanegashima LA-Y,Failure
+SLV005,2025-03-01,Falcon Heavy,Lunar Probe Pathfinder,KSC LC-39A,Scheduled
+SLV006,2025-03-10,Electron,WeatherSat-3,Mahia LC-1B,Success
+SLV007,2025-03-25,Starship,Deep Space Cargo Test,Boca Chica Orbital Pad,Delayed
+SLV008,2025-04-02,Vega C,Earth Imaging Cluster,Vega Launch Zone,Success
+SLV009,2025-04-12,PSLV,NavIC Expansion,Satish Dhawan FLP,Success
+SLV010,2025-04-30,Falcon 9,Starlink Group 9-2,CCSFS SLC-40,Cancelled
+SLV011,2025-05-10,New Glenn,Orbital Tourism Demo,LC-36,Scheduled
+SLV012,2025-05-22,Long March 7,Space Station Cargo,WSLC LC-201,Success
+SLV013,2025-06-01,Falcon 9,Starlink Batch Alpha,CCSFS SLC-40,Success
+SLV014,2025-06-15,Electron,Microsat Deployment,Mahia LC-1B,Success
+SLV015,2025-06-20,H3,Communications Relay,Tanegashima LA-Y,Scheduled
+SLV016,2025-07-02,Long March 5B,Lunar Lander Test,WSLC LC-101,Failure
+SLV017,2025-07-18,Vega C,Polar Imaging,ESA Vega Site,Delayed
+SLV018,2025-07-25,Starship,Mars Cargo Demo,Boca Chica Orbital Pad,Scheduled
+SLV019,2025-08-03,PSLV,NavIC Expansion 2,Satish Dhawan FLP,Success
+SLV020,2025-08-18,Falcon Heavy,Geostationary Relay,KSC LC-39A,Success
+SLV021,2025-09-01,Ariane 6,Commercial LEO Delivery,Kourou ELA-4,Scheduled
+SLV022,2025-09-12,New Glenn,Heavy Cargo Mission,LC-36,Delayed
+SLV023,2025-09-30,Electron,WeatherSat-4,Mahia LC-1B,Success
+SLV024,2025-10-05,Long March 7,Station Resupply,WSLC LC-201,Success
+SLV025,2025-10-20,Falcon 9,Starlink Group 10-1,CCSFS SLC-40,Success
+SLV026,2025-11-02,H3,Scientific Probe Launch,Tanegashima LA-Y,Cancelled
+SLV027,2025-11-18,Starship,Deep Space Cargo 2,Boca Chica Orbital Pad,Delayed
+SLV028,2025-12-01,Vega C,Remote Sensing Cluster,Vega Launch Zone,Success
+SLV029,2025-12-12,PSLV,Navigation Upgrade,Satish Dhawan FLP,Success
+SLV030,2025-12-25,Falcon Heavy,Christmas Comms Satellite,KSC LC-39A,Scheduled
+SLV100,2026-01-01,Falcon 9,New Year Test,CCSFS SLC-40,Scheduled
+SLV100,2026-01-02,Falcon 9,Duplicate ID Test,CCSFS SLC-40,Scheduled
+stlm>> SLV100,2026-01-01,Falcon 9,New Year Test,CCSFS SLC-40,Scheduled
+
+Amount of records found: 1
+stlm>> OK
+stlm>>
 
         test_update.sh - Expected:
 
-sltm> Loaded 30 records, ignored 5 invalid/missing records.
-sltm> Updated SLV005
-sltm> SLV005,2025-02-01,Falcon Heavy,Lunar Probe Pathfinder,KSC LC-39A,Success
-sltm> SLV005,2025-02-01,Falcon Heavy,Lunar Probe Pathfinder,KSC LC-39A,Success
-sltm> Exported to out_test_update.csv
-sltm> Exiting...
+sh ./test/test_update.sh
+stlm>> FILE FOUND!
+
+SLV001,2025-01-15,Falcon 9,Starlink Group 9-1,CCSFS SLC-40,Success
+SLV002,2025-01-20,Ariane 6,Artemis Supply Test,Kourou ELA-4,Delayed
+SLV003,2025-02-05,Long March 5B,Chinese Space Lab Module,WSLC LC-101,Success
+SLV004,2025-02-18,H3,HTV-X Cargo to ISS,Tanegashima LA-Y,Failure
+SLV005,2025-03-01,Falcon Heavy,Lunar Probe Pathfinder,KSC LC-39A,Scheduled
+SLV006,2025-03-10,Electron,WeatherSat-3,Mahia LC-1B,Success
+SLV007,2025-03-25,Starship,Deep Space Cargo Test,Boca Chica Orbital Pad,Delayed
+SLV008,2025-04-02,Vega C,Earth Imaging Cluster,Vega Launch Zone,Success
+SLV009,2025-04-12,PSLV,NavIC Expansion,Satish Dhawan FLP,Success
+SLV010,2025-04-30,Falcon 9,Starlink Group 9-2,CCSFS SLC-40,Cancelled
+SLV011,2025-05-10,New Glenn,Orbital Tourism Demo,LC-36,Scheduled
+SLV012,2025-05-22,Long March 7,Space Station Cargo,WSLC LC-201,Success
+SLV013,2025-06-01,Falcon 9,Starlink Batch Alpha,CCSFS SLC-40,Success
+SLV014,2025-06-15,Electron,Microsat Deployment,Mahia LC-1B,Success
+SLV015,2025-06-20,H3,Communications Relay,Tanegashima LA-Y,Scheduled
+SLV016,2025-07-02,Long March 5B,Lunar Lander Test,WSLC LC-101,Failure
+SLV017,2025-07-18,Vega C,Polar Imaging,ESA Vega Site,Delayed
+SLV018,2025-07-25,Starship,Mars Cargo Demo,Boca Chica Orbital Pad,Scheduled
+SLV019,2025-08-03,PSLV,NavIC Expansion 2,Satish Dhawan FLP,Success
+SLV020,2025-08-18,Falcon Heavy,Geostationary Relay,KSC LC-39A,Success
+SLV021,2025-09-01,Ariane 6,Commercial LEO Delivery,Kourou ELA-4,Scheduled
+SLV022,2025-09-12,New Glenn,Heavy Cargo Mission,LC-36,Delayed
+SLV023,2025-09-30,Electron,WeatherSat-4,Mahia LC-1B,Success
+SLV024,2025-10-05,Long March 7,Station Resupply,WSLC LC-201,Success
+SLV025,2025-10-20,Falcon 9,Starlink Group 10-1,CCSFS SLC-40,Success
+SLV026,2025-11-02,H3,Scientific Probe Launch,Tanegashima LA-Y,Cancelled
+SLV027,2025-11-18,Starship,Deep Space Cargo 2,Boca Chica Orbital Pad,Delayed
+SLV028,2025-12-01,Vega C,Remote Sensing Cluster,Vega Launch Zone,Success
+SLV029,2025-12-12,PSLV,Navigation Upgrade,Satish Dhawan FLP,Success
+SLV030,2025-12-25,Falcon Heavy,Christmas Comms Satellite,KSC LC-39A,Scheduled
+stlm>>
+update failed!
+stlm>> SLV005,2025-03-01,Falcon Heavy,Lunar Probe Pathfinder,KSC LC-39A,Scheduled
+SLV016,2025-07-02,Long March 5B,Lunar Lander Test,WSLC LC-101,Failure
+
+Amount of records found: 2
+stlm>> SLV003,2025-02-05,Long March 5B,Chinese Space Lab Module,WSLC LC-101,Success
+SLV004,2025-02-18,H3,HTV-X Cargo to ISS,Tanegashima LA-Y,Failure
+SLV005,2025-03-01,Falcon Heavy,Lunar Probe Pathfinder,KSC LC-39A,Scheduled
+stlm>> OK
+stlm>>
 
         test_delete.sh - Expected:
 
-sltm> Loaded 30 records, ignored 5 invalid/missing records.
-sltm> Deleted SLV010
-sltm> Error: id SLV999 not found
-sltm> SLV009,2025-04-12,PSLV,NavIC Expansion,Satish Dhawan FLP,Success
-sltm> SLV011,2025-05-10,New Glenn,Orbital Tourism Demo,LC-36,Scheduled
-sltm> Exported to out_test_delete.csv
-sltm> Exiting...
+sh ./test/test_delete.sh
+stlm>> FILE FOUND!
+
+SLV001,2025-01-15,Falcon 9,Starlink Group 9-1,CCSFS SLC-40,Success
+SLV002,2025-01-20,Ariane 6,Artemis Supply Test,Kourou ELA-4,Delayed
+SLV003,2025-02-05,Long March 5B,Chinese Space Lab Module,WSLC LC-101,Success
+SLV004,2025-02-18,H3,HTV-X Cargo to ISS,Tanegashima LA-Y,Failure
+SLV005,2025-03-01,Falcon Heavy,Lunar Probe Pathfinder,KSC LC-39A,Scheduled
+SLV006,2025-03-10,Electron,WeatherSat-3,Mahia LC-1B,Success
+SLV007,2025-03-25,Starship,Deep Space Cargo Test,Boca Chica Orbital Pad,Delayed
+SLV008,2025-04-02,Vega C,Earth Imaging Cluster,Vega Launch Zone,Success
+SLV009,2025-04-12,PSLV,NavIC Expansion,Satish Dhawan FLP,Success
+SLV010,2025-04-30,Falcon 9,Starlink Group 9-2,CCSFS SLC-40,Cancelled
+SLV011,2025-05-10,New Glenn,Orbital Tourism Demo,LC-36,Scheduled
+SLV012,2025-05-22,Long March 7,Space Station Cargo,WSLC LC-201,Success
+SLV013,2025-06-01,Falcon 9,Starlink Batch Alpha,CCSFS SLC-40,Success
+SLV014,2025-06-15,Electron,Microsat Deployment,Mahia LC-1B,Success
+SLV015,2025-06-20,H3,Communications Relay,Tanegashima LA-Y,Scheduled
+SLV016,2025-07-02,Long March 5B,Lunar Lander Test,WSLC LC-101,Failure
+SLV017,2025-07-18,Vega C,Polar Imaging,ESA Vega Site,Delayed
+SLV018,2025-07-25,Starship,Mars Cargo Demo,Boca Chica Orbital Pad,Scheduled
+SLV019,2025-08-03,PSLV,NavIC Expansion 2,Satish Dhawan FLP,Success
+SLV020,2025-08-18,Falcon Heavy,Geostationary Relay,KSC LC-39A,Success
+SLV021,2025-09-01,Ariane 6,Commercial LEO Delivery,Kourou ELA-4,Scheduled
+SLV022,2025-09-12,New Glenn,Heavy Cargo Mission,LC-36,Delayed
+SLV023,2025-09-30,Electron,WeatherSat-4,Mahia LC-1B,Success
+SLV024,2025-10-05,Long March 7,Station Resupply,WSLC LC-201,Success
+SLV025,2025-10-20,Falcon 9,Starlink Group 10-1,CCSFS SLC-40,Success
+SLV026,2025-11-02,H3,Scientific Probe Launch,Tanegashima LA-Y,Cancelled
+SLV027,2025-11-18,Starship,Deep Space Cargo 2,Boca Chica Orbital Pad,Delayed
+SLV028,2025-12-01,Vega C,Remote Sensing Cluster,Vega Launch Zone,Success
+SLV029,2025-12-12,PSLV,Navigation Upgrade,Satish Dhawan FLP,Success
+SLV030,2025-12-25,Falcon Heavy,Christmas Comms Satellite,KSC LC-39A,Scheduled
+stlm>>
+delete succeded!
+SLV001,2025-01-15,Falcon 9,Starlink Group 9-1,CCSFS SLC-40,Success
+SLV002,2025-01-20,Ariane 6,Artemis Supply Test,Kourou ELA-4,Delayed
+SLV003,2025-02-05,Long March 5B,Chinese Space Lab Module,WSLC LC-101,Success
+SLV004,2025-02-18,H3,HTV-X Cargo to ISS,Tanegashima LA-Y,Failure
+SLV005,2025-03-01,Falcon Heavy,Lunar Probe Pathfinder,KSC LC-39A,Scheduled
+SLV006,2025-03-10,Electron,WeatherSat-3,Mahia LC-1B,Success
+SLV007,2025-03-25,Starship,Deep Space Cargo Test,Boca Chica Orbital Pad,Delayed
+SLV008,2025-04-02,Vega C,Earth Imaging Cluster,Vega Launch Zone,Success
+SLV009,2025-04-12,PSLV,NavIC Expansion,Satish Dhawan FLP,Success
+SLV011,2025-05-10,New Glenn,Orbital Tourism Demo,LC-36,Scheduled
+SLV012,2025-05-22,Long March 7,Space Station Cargo,WSLC LC-201,Success
+SLV013,2025-06-01,Falcon 9,Starlink Batch Alpha,CCSFS SLC-40,Success
+SLV014,2025-06-15,Electron,Microsat Deployment,Mahia LC-1B,Success
+SLV015,2025-06-20,H3,Communications Relay,Tanegashima LA-Y,Scheduled
+SLV016,2025-07-02,Long March 5B,Lunar Lander Test,WSLC LC-101,Failure
+SLV017,2025-07-18,Vega C,Polar Imaging,ESA Vega Site,Delayed
+SLV018,2025-07-25,Starship,Mars Cargo Demo,Boca Chica Orbital Pad,Scheduled
+SLV019,2025-08-03,PSLV,NavIC Expansion 2,Satish Dhawan FLP,Success
+SLV020,2025-08-18,Falcon Heavy,Geostationary Relay,KSC LC-39A,Success
+SLV021,2025-09-01,Ariane 6,Commercial LEO Delivery,Kourou ELA-4,Scheduled
+SLV022,2025-09-12,New Glenn,Heavy Cargo Mission,LC-36,Delayed
+SLV023,2025-09-30,Electron,WeatherSat-4,Mahia LC-1B,Success
+SLV024,2025-10-05,Long March 7,Station Resupply,WSLC LC-201,Success
+SLV025,2025-10-20,Falcon 9,Starlink Group 10-1,CCSFS SLC-40,Success
+SLV026,2025-11-02,H3,Scientific Probe Launch,Tanegashima LA-Y,Cancelled
+SLV027,2025-11-18,Starship,Deep Space Cargo 2,Boca Chica Orbital Pad,Delayed
+SLV028,2025-12-01,Vega C,Remote Sensing Cluster,Vega Launch Zone,Success
+SLV029,2025-12-12,PSLV,Navigation Upgrade,Satish Dhawan FLP,Success
+SLV030,2025-12-25,Falcon Heavy,Christmas Comms Satellite,KSC LC-39A,Scheduled
+stlm>>
+delete failed!
+stlm>> SLV008,2025-04-02,Vega C,Earth Imaging Cluster,Vega Launch Zone,Success
+SLV009,2025-04-12,PSLV,NavIC Expansion,Satish Dhawan FLP,Success
+stlm>> OK
+stlm>>
 
         test_range_find.sh - Expected:
 
-sltm> Loaded 30 records, ignored 5 invalid/missing records.
-sltm> SLV013,2025-06-01,Falcon 9,Starlink Batch Alpha,CCSFS SLC-40,Success
-sltm> SLV014,2025-06-15,Electron,Microsat Deployment,Mahia LC-1B,Success
-sltm> SLV015,2025-06-20,H3,Communications Relay,Tanegashima LA-Y,Scheduled
-sltm> SLV016,2025-07-02,Long March 5B,Lunar Lander Test,WSLC LC-101,Failure
-sltm> SLV017,2025-07-18,Vega C,Polar Imaging,ESA Vega Site,Delayed
-sltm> SLV018,2025-07-25,Starship,Mars Cargo Demo,Boca Chica Orbital Pad,Scheduled
-sltm> SLV018,2025-07-25,Starship,Mars Cargo Demo,Boca Chica Orbital Pad,Scheduled
-sltm> SLV008,2025-04-02,Vega C,Earth Imaging Cluster,Vega Launch Zone,Success
-sltm> Exiting...
+sh ./test/test_range_find.sh
+stlm>> FILE FOUND!
+
+SLV001,2025-01-15,Falcon 9,Starlink Group 9-1,CCSFS SLC-40,Success
+SLV002,2025-01-20,Ariane 6,Artemis Supply Test,Kourou ELA-4,Delayed
+SLV003,2025-02-05,Long March 5B,Chinese Space Lab Module,WSLC LC-101,Success
+SLV004,2025-02-18,H3,HTV-X Cargo to ISS,Tanegashima LA-Y,Failure
+SLV005,2025-03-01,Falcon Heavy,Lunar Probe Pathfinder,KSC LC-39A,Scheduled
+SLV006,2025-03-10,Electron,WeatherSat-3,Mahia LC-1B,Success
+SLV007,2025-03-25,Starship,Deep Space Cargo Test,Boca Chica Orbital Pad,Delayed
+SLV008,2025-04-02,Vega C,Earth Imaging Cluster,Vega Launch Zone,Success
+SLV009,2025-04-12,PSLV,NavIC Expansion,Satish Dhawan FLP,Success
+SLV010,2025-04-30,Falcon 9,Starlink Group 9-2,CCSFS SLC-40,Cancelled
+SLV011,2025-05-10,New Glenn,Orbital Tourism Demo,LC-36,Scheduled
+SLV012,2025-05-22,Long March 7,Space Station Cargo,WSLC LC-201,Success
+SLV013,2025-06-01,Falcon 9,Starlink Batch Alpha,CCSFS SLC-40,Success
+SLV014,2025-06-15,Electron,Microsat Deployment,Mahia LC-1B,Success
+SLV015,2025-06-20,H3,Communications Relay,Tanegashima LA-Y,Scheduled
+SLV016,2025-07-02,Long March 5B,Lunar Lander Test,WSLC LC-101,Failure
+SLV017,2025-07-18,Vega C,Polar Imaging,ESA Vega Site,Delayed
+SLV018,2025-07-25,Starship,Mars Cargo Demo,Boca Chica Orbital Pad,Scheduled
+SLV019,2025-08-03,PSLV,NavIC Expansion 2,Satish Dhawan FLP,Success
+SLV020,2025-08-18,Falcon Heavy,Geostationary Relay,KSC LC-39A,Success
+SLV021,2025-09-01,Ariane 6,Commercial LEO Delivery,Kourou ELA-4,Scheduled
+SLV022,2025-09-12,New Glenn,Heavy Cargo Mission,LC-36,Delayed
+SLV023,2025-09-30,Electron,WeatherSat-4,Mahia LC-1B,Success
+SLV024,2025-10-05,Long March 7,Station Resupply,WSLC LC-201,Success
+SLV025,2025-10-20,Falcon 9,Starlink Group 10-1,CCSFS SLC-40,Success
+SLV026,2025-11-02,H3,Scientific Probe Launch,Tanegashima LA-Y,Cancelled
+SLV027,2025-11-18,Starship,Deep Space Cargo 2,Boca Chica Orbital Pad,Delayed
+SLV028,2025-12-01,Vega C,Remote Sensing Cluster,Vega Launch Zone,Success
+SLV029,2025-12-12,PSLV,Navigation Upgrade,Satish Dhawan FLP,Success
+SLV030,2025-12-25,Falcon Heavy,Christmas Comms Satellite,KSC LC-39A,Scheduled
+stlm>> SLV013,2025-06-01,Falcon 9,Starlink Batch Alpha,CCSFS SLC-40,Success
+SLV014,2025-06-15,Electron,Microsat Deployment,Mahia LC-1B,Success
+SLV015,2025-06-20,H3,Communications Relay,Tanegashima LA-Y,Scheduled
+SLV016,2025-07-02,Long March 5B,Lunar Lander Test,WSLC LC-101,Failure
+SLV017,2025-07-18,Vega C,Polar Imaging,ESA Vega Site,Delayed
+SLV018,2025-07-25,Starship,Mars Cargo Demo,Boca Chica Orbital Pad,Scheduled
+stlm>> SLV007,2025-03-25,Starship,Deep Space Cargo Test,Boca Chica Orbital Pad,Delayed
+SLV018,2025-07-25,Starship,Mars Cargo Demo,Boca Chica Orbital Pad,Scheduled
+SLV027,2025-11-18,Starship,Deep Space Cargo 2,Boca Chica Orbital Pad,Delayed
+
+Amount of records found: 3
+stlm>> SLV008,2025-04-02,Vega C,Earth Imaging Cluster,Vega Launch Zone,Success
+SLV017,2025-07-18,Vega C,Polar Imaging,ESA Vega Site,Delayed
+SLV028,2025-12-01,Vega C,Remote Sensing Cluster,Vega Launch Zone,Success
+
+Amount of records found: 3
+stlm>>
 
         test_export.sh - Expected:
 
-sltm> Loaded 30 records, ignored 5 invalid/missing records.
-sltm> Exported to out_full_export.csv
-sltm> Exiting...
+sh ./test/test_export.sh
+stlm>> FILE FOUND!
+
+SLV001,2025-01-15,Falcon 9,Starlink Group 9-1,CCSFS SLC-40,Success
+SLV002,2025-01-20,Ariane 6,Artemis Supply Test,Kourou ELA-4,Delayed
+SLV003,2025-02-05,Long March 5B,Chinese Space Lab Module,WSLC LC-101,Success
+SLV004,2025-02-18,H3,HTV-X Cargo to ISS,Tanegashima LA-Y,Failure
+SLV005,2025-03-01,Falcon Heavy,Lunar Probe Pathfinder,KSC LC-39A,Scheduled
+SLV006,2025-03-10,Electron,WeatherSat-3,Mahia LC-1B,Success
+SLV007,2025-03-25,Starship,Deep Space Cargo Test,Boca Chica Orbital Pad,Delayed
+SLV008,2025-04-02,Vega C,Earth Imaging Cluster,Vega Launch Zone,Success
+SLV009,2025-04-12,PSLV,NavIC Expansion,Satish Dhawan FLP,Success
+SLV010,2025-04-30,Falcon 9,Starlink Group 9-2,CCSFS SLC-40,Cancelled
+SLV011,2025-05-10,New Glenn,Orbital Tourism Demo,LC-36,Scheduled
+SLV012,2025-05-22,Long March 7,Space Station Cargo,WSLC LC-201,Success
+SLV013,2025-06-01,Falcon 9,Starlink Batch Alpha,CCSFS SLC-40,Success
+SLV014,2025-06-15,Electron,Microsat Deployment,Mahia LC-1B,Success
+SLV015,2025-06-20,H3,Communications Relay,Tanegashima LA-Y,Scheduled
+SLV016,2025-07-02,Long March 5B,Lunar Lander Test,WSLC LC-101,Failure
+SLV017,2025-07-18,Vega C,Polar Imaging,ESA Vega Site,Delayed
+SLV018,2025-07-25,Starship,Mars Cargo Demo,Boca Chica Orbital Pad,Scheduled
+SLV019,2025-08-03,PSLV,NavIC Expansion 2,Satish Dhawan FLP,Success
+SLV020,2025-08-18,Falcon Heavy,Geostationary Relay,KSC LC-39A,Success
+SLV021,2025-09-01,Ariane 6,Commercial LEO Delivery,Kourou ELA-4,Scheduled
+SLV022,2025-09-12,New Glenn,Heavy Cargo Mission,LC-36,Delayed
+SLV023,2025-09-30,Electron,WeatherSat-4,Mahia LC-1B,Success
+SLV024,2025-10-05,Long March 7,Station Resupply,WSLC LC-201,Success
+SLV025,2025-10-20,Falcon 9,Starlink Group 10-1,CCSFS SLC-40,Success
+SLV026,2025-11-02,H3,Scientific Probe Launch,Tanegashima LA-Y,Cancelled
+SLV027,2025-11-18,Starship,Deep Space Cargo 2,Boca Chica Orbital Pad,Delayed
+SLV028,2025-12-01,Vega C,Remote Sensing Cluster,Vega Launch Zone,Success
+SLV029,2025-12-12,PSLV,Navigation Upgrade,Satish Dhawan FLP,Success
+SLV030,2025-12-25,Falcon Heavy,Christmas Comms Satellite,KSC LC-39A,Scheduled
+stlm>> OK
+stlm>>
