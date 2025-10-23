@@ -1,6 +1,6 @@
-Our Tests - Expected Outputs (Description)
+Our Tests - Expected Outputs
 
-        test_load.sh - Expected:
+        1.test_load.sh - Expected:
 
 sh ./test/test_load.sh
 stlm>> FILE FOUND!
@@ -37,7 +37,7 @@ SLV029,2025-12-12,PSLV,Navigation Upgrade,Satish Dhawan FLP,Success
 SLV030,2025-12-25,Falcon Heavy,Christmas Comms Satellite,KSC LC-39A,Scheduled
 stlm>>
 
-        test_add.sh - Expected:
+        2.test_add.sh - Expected:
 
 sh ./test/test_add.sh
 stlm>> FILE FOUND!
@@ -145,7 +145,7 @@ Amount of records found: 1
 stlm>> OK
 stlm>>
 
-        test_update.sh - Expected:
+        3.test_update.sh - Expected:
 
 sh ./test/test_update.sh
 stlm>> FILE FOUND!
@@ -192,7 +192,7 @@ SLV005,2025-03-01,Falcon Heavy,Lunar Probe Pathfinder,KSC LC-39A,Scheduled
 stlm>> OK
 stlm>>
 
-        test_delete.sh - Expected:
+        4.test_delete.sh - Expected:
 
 sh ./test/test_delete.sh
 stlm>> FILE FOUND!
@@ -265,7 +265,7 @@ SLV009,2025-04-12,PSLV,NavIC Expansion,Satish Dhawan FLP,Success
 stlm>> OK
 stlm>>
 
-        test_range_find.sh - Expected:
+        5.test_range_find.sh - Expected:
 
 sh ./test/test_range_find.sh
 stlm>> FILE FOUND!
@@ -318,7 +318,7 @@ SLV028,2025-12-01,Vega C,Remote Sensing Cluster,Vega Launch Zone,Success
 Amount of records found: 3
 stlm>>
 
-        test_export.sh - Expected:
+        6.test_export.sh - Expected:
 
 sh ./test/test_export.sh
 stlm>> FILE FOUND!
