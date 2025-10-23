@@ -10,6 +10,6 @@ EventNode *deleteRecord(EventNode *eventList, char *id);
 
 void rangePrint(EventNode *eventList, const char *startDate, const char *endDate);
 
-//method find;
+int findEvent(EventNode *head, const char *keyword);
 
 #endif
