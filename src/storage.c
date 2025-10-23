@@ -5,18 +5,12 @@
 #include <string.h>
 
 
-static int read = 0;
-
-void skipRecord(FILE *file){
-    read = 0;
-    fscanf(file, "\n");
-}
-
 EventNode *loadFile(FILE *file){
 
     EventNode *eventList = {};
     _Bool skipLine = 0;
     Event event = {0};
+    int read = 0;
 
     do {
         char temp[257] = {0};
@@ -26,11 +20,19 @@ EventNode *loadFile(FILE *file){
         //missing record validation
         if(strlen(temp) == 0) {
             fgetc(file);
-            skipRecord(file);
+            fscanf(file, "\n");
+            read = 0;
         }
 
-        if(read == 2 && isInvalidDate(temp)) skipRecord(file);
-        if(read == 6 && isInvalidStatus(temp)) skipRecord(file);
+        if(read == 2 && isInvalidDate(temp)){
+            fscanf(file, "\n");
+            read = 0;
+        }
+
+        if(read == 6 && isInvalidStatus(temp)) {
+            fscanf(file, "\n");
+            read = 0;
+        }
 
         switch (read) {
             case 1:
