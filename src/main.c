@@ -100,6 +100,7 @@ int main(int argc, char *argv[]) {
 
             //range
             if (!handled && strstr(arg1, "range")) {
+                strtok(arg2, " ");
                 char *arg3 = strtok(NULL, " ");
                 if (arg2 != NULL && arg3 != NULL) {
                     rangePrint(eventlist, arg2, arg3);
