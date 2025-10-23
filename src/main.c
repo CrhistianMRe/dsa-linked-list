@@ -2,7 +2,6 @@
 #include "../include/eventlist.h"
 #include "../include/storage.h"
 #include "../include/crud.h"
-#include <endian.h>
 #include <string.h>
 
 static _Bool close = 1;
@@ -14,7 +13,7 @@ void intHandler(int dummy){
 }
 
 void printDef(){
-    printf("\n-help for command list\n");
+    printf("\n-invalid format\n");
 }
 
 _Bool contains(char prompt[], char ext[]) {
@@ -113,8 +112,14 @@ int main(int argc, char *argv[]) {
             handled = 1;
         }
 
+        //export
         if (!handled && arg1 && strcmp(arg1, "export") == 0 && arg2 != NULL) {
             exportCSV(eventlist, arg2);
+            handled = 1;
+        }
+
+        if(strcmp(arg1, "exit") == 0) {
+            close = 0;
             handled = 1;
         }
 
