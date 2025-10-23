@@ -150,3 +150,23 @@ void rangePrint(EventNode *eventList, const char *startDate, const char *endDate
     }
 }
 
+int findEvent(EventNode *head, const char *keyword) {
+    if (!keyword || !*keyword) return 0;
+
+    int count = 0;
+    while (head != NULL) {
+        if (strstr(head->event.mission, keyword) || strstr(head->event.vehicle, keyword)) {
+            printf("%s,%s,%s,%s,%s,%s\n",
+                   head->event.id,
+                   head->event.date,
+                   head->event.vehicle,
+                   head->event.mission,
+                   head->event.site,
+                   head->event.status);
+            count++;
+        }
+        head = head->next;
+    }
+    return count;
+}
+
